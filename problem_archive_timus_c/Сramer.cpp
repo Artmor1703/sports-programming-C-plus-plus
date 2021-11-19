@@ -35,7 +35,7 @@ int Determinant(float** Matr, int Razm, float* KofSyst) {
 	int k = 1;
 	int n2 = Razm - 1;
 	if (Razm < 1)
-		printf("Îïðåäåëèòåëü íàéòè íåâîçìîæíî.");
+		printf("ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ Ð½Ð°Ð¹Ñ‚Ð¸ Ð½ÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾.");
 	if (Razm == 1) {
 		Opred1 = Matr[0][0];
 		return(Opred1);
@@ -58,15 +58,15 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 
-	// Îñíîâíàÿ ìàòðèöà
+	// ÐžÑÐ½Ð¾Ð²Ð½Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°
 	int Razm;
-	printf("Ââåäèòå ðàçìåðíîñòü ìàòðèöû: ");
+	printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ñ‹: ");
 	scanf_s("%d", &Razm);
 	float* KofSyst = (float*)calloc(Razm, sizeof(float));
 	float* Opred = (float*)calloc(Razm, sizeof(float));
-	float** Base = (float**)malloc(Razm * sizeof(float*)); // äèíàìè÷åñêîå âûäåëåíèå ïàìÿòè
-	printf("Ââåäèòå ñèñòåìó\n");
-	// Ââîä ýëåìåíòîâ ìàññèâà
+	float** Base = (float**)malloc(Razm * sizeof(float*)); // Ð´Ð¸Ð½Ð°Ð¼Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð°Ð¼ÑÑ‚Ð¸
+	printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¸ÑÑ‚ÐµÐ¼Ñƒ\n");
+	// Ð’Ð²Ð¾Ð´ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°
 	for (int i = 0; i < Razm; i++) {
 		Base[i] = (float*)malloc(Razm * sizeof(float));
 		int j = 0;
@@ -79,12 +79,12 @@ int main()
 		for (int j = 0; j < Razm; j++)
 			Matr[i][j] = Base[i][j];
 	}
-	printf("Ìàòðèöà\n");
+	printf("ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð°\n");
 	PrintMatr(Matr, Razm);
 	Opred[0] = Determinant(Matr, Razm, KofSyst);
 	if (Opred[0] == 0) {
-		printf("Îïðåäåëèòåëü delta = %.2f \n", Opred[0]);
-		printf("Îïðåäåëèòåëü ðàâåí íóëþ, ìàòðèöà ÿâëÿåòñÿ îñîáåííîé \n");
+		printf("ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ delta = %.2f \n", Opred[0]);
+		printf("ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ Ñ€Ð°Ð²ÐµÐ½ Ð½ÑƒÐ»ÑŽ, Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð° ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð¾ÑÐ¾Ð±ÐµÐ½Ð½Ð¾Ð¹ \n");
 		for (int i = 0; i < Razm; i++) {
 			free(Base[i]);
 			free(Matr[i]);
@@ -96,14 +96,14 @@ int main()
 
 		return 0;
 	}
-	printf("Îïðåäåëèòåëü delta = %.2f\n", Opred[0]);
+	printf("ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ delta = %.2f\n", Opred[0]);
 	for (int j = 0; j < Razm; j++) {
 		for (int i = 0; i < Razm; i++)
 			Matr[i][j] = KofSyst[i];
-		printf("Ìàòðèöà ñ çàìåíîé %d ñòîëáöà êîýôôèöèåíòàìè ñèñòåìû\n", j + 1);
+		printf("ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° Ñ Ð·Ð°Ð¼ÐµÐ½Ð¾Ð¹ %d ÑÑ‚Ð¾Ð»Ð±Ñ†Ð° ÐºÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚Ð°Ð¼Ð¸ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹\n", j + 1);
 		PrintMatr(Matr, Razm);
 		Opred[j + 1] = Determinant(Matr, Razm, KofSyst);
-		printf("Îïðåäåëèòåëü delta(%d) = %.2f\n", j + 1, Opred[j + 1]);
+		printf("ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»Ð¸Ñ‚ÐµÐ»ÑŒ delta(%d) = %.2f\n", j + 1, Opred[j + 1]);
 		for (int i = 0; i < Razm; i++)
 			Matr[i][j] = Base[i][j];
 
