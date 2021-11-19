@@ -26,7 +26,6 @@ ___
 #### ENG
 
 The file contains project implemented in **Python** using **pywin32**
-using the PyWin32 library
 
 A project is a command line program. Manipulations are performed with the folder specified in the code itself.<br>
 After entering the correct password (111), the user will have the opportunity to perform 4 actions.
