@@ -1,6 +1,7 @@
 
 #### РУС
 
+Задачи взяты с сайта по спортивному программированию **[timus](https://acm.timus.ru)**. <br>
 В файле предоставлены коды на языке **C++** <br>
 В программах используются **жадный алгоритм** и **бинарный поиск**
 
@@ -17,6 +18,7 @@ ___
 
 #### ENG
 
+Tasks taken from the sports programming site **[timus](https://acm.timus.ru)**. <br>
 The file contains codes implemented in C++ <br>
 **Greedy algorithm** and **binary search** are used in codes
 
